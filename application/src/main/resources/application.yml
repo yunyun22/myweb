@@ -1,0 +1,6 @@
+# 服务端口号
+server:
+  port: 8001
+spring:
+  application:
+    name: application # 对外暴露的服务名称
