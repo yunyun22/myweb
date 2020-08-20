@@ -1,0 +1,19 @@
+# 服务端口号
+server:
+  port: 8001
+spring:
+  application:
+    name: producer # 对外暴露的服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.25.67.106:8848
+    alibaba:
+      seata:
+        tx-service-group: SEATA_GROUP
+  datasource:
+    url: jdbc:mysql://118.25.67.106:3306/test
+    username: root
+    password: yuanyun520.
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
