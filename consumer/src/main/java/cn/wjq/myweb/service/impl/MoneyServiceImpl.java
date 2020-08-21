@@ -14,7 +14,6 @@ public class MoneyServiceImpl implements MoneyService {
     private SeataAccountMapper seataAccountMapper;
 
     @Override
-    @GlobalTransactional
     public void reduceMoney(int reduceMoney, int id) {
         SeataAccount seataAccount = seataAccountMapper.selectById(id);
         seataAccount.setMoney(seataAccount.getMoney() - 5000);

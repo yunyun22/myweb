@@ -28,12 +28,11 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    @GlobalTransactional
+    @GlobalTransactional(name = "test")
     public void test() throws Exception {
         SeataGood seataGood = stockMapper.selectById(1);
         seataGood.setStock(seataGood.getStock()-1);
         stockMapper.updateById(seataGood);
         comsumerFeign.test();
-        throw new Exception();
     }
 }

@@ -29,3 +29,6 @@ seata:
       serverAddr: 118.25.67.106:8848
       #需要server端(registry和config)、nacos配置client端(registry和config)保持一致
       group: SEATA_GROUP
+feign:
+  httpclient:
+    connection-timeout: 50000
