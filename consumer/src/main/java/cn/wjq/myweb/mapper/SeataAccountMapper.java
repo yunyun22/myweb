@@ -1,6 +1,6 @@
-package cn.wangjq.myweb.mapper;
+package cn.wjq.myweb.mapper;
 
-import cn.wangjq.myweb.domain.SeataAccount;
+import cn.wjq.myweb.domain.SeataAccount;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 

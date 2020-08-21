@@ -4,11 +4,14 @@ import cn.wjq.myweb.domain.SeataGood;
 import cn.wjq.myweb.feign.ConsumerFeign;
 import cn.wjq.myweb.mapper.StockMapper;
 import cn.wjq.myweb.service.StockService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Administrator
  */
+@Service
 public class StockServiceImpl implements StockService {
 
     @Autowired
@@ -25,6 +28,7 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
+    @GlobalTransactional
     public void test() throws Exception {
         SeataGood seataGood = stockMapper.selectById(1);
         seataGood.setStock(seataGood.getStock()-1);

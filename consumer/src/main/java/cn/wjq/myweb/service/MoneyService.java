@@ -1,4 +1,4 @@
-package cn.wangjq.myweb.service;
+package cn.wjq.myweb.service;
 
 /**
  * @author Administrator

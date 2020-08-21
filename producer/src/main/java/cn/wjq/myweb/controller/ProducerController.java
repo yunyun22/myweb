@@ -17,7 +17,7 @@ public class ProducerController {
     @Autowired
     private StockService stockService;
 
-    @GetMapping()
+    @GetMapping("/test")
     public String produce() throws Exception {
         stockService.test();
         return "ok";

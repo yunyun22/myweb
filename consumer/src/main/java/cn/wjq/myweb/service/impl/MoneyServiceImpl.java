@@ -1,8 +1,9 @@
-package cn.wangjq.myweb.service.impl;
+package cn.wjq.myweb.service.impl;
 
-import cn.wangjq.myweb.domain.SeataAccount;
-import cn.wangjq.myweb.mapper.SeataAccountMapper;
-import cn.wangjq.myweb.service.MoneyService;
+import cn.wjq.myweb.domain.SeataAccount;
+import cn.wjq.myweb.mapper.SeataAccountMapper;
+import cn.wjq.myweb.service.MoneyService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class MoneyServiceImpl implements MoneyService {
     private SeataAccountMapper seataAccountMapper;
 
     @Override
+    @GlobalTransactional
     public void reduceMoney(int reduceMoney, int id) {
         SeataAccount seataAccount = seataAccountMapper.selectById(id);
         seataAccount.setMoney(seataAccount.getMoney() - 5000);

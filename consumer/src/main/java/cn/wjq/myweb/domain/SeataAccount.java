@@ -1,4 +1,4 @@
-package cn.wangjq.myweb.domain;
+package cn.wjq.myweb.domain;
 
 public class SeataAccount {
     private int id;

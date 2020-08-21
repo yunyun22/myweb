@@ -11,6 +11,6 @@ public interface ConsumerFeign {
      * @return
      */
     @GetMapping(value = "/consumer/test")
-    String test();
+    void test();
 
 }

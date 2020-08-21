@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.io.PrintWriter;
 
 /**
- * @author wangjq
+ * @author wjq
  */
 @Configuration
 @EnableWebSecurity
@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("wangjq").roles("admin").password("$2a$10$sQxVhU1mzQPyD8b.tHgbOe8061AF9LeLcQlMVlqhINDVNx4V/gfyK")
+                .withUser("wjq").roles("admin").password("$2a$10$sQxVhU1mzQPyD8b.tHgbOe8061AF9LeLcQlMVlqhINDVNx4V/gfyK")
                 .and()
                 .withUser("lisi").roles("user").password("$2a$10$sQxVhU1mzQPyD8b.tHgbOe8061AF9LeLcQlMVlqhINDVNx4V/gfyK");
     }
@@ -37,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //开启登录配置
         http.authorizeRequests()
+                .antMatchers("/producer/**").permitAll()
                 //表示访问 /hello 这个接口，需要具备 admin 这个角色
                 .antMatchers("/hello").hasRole("admin")
                 .antMatchers("/code").permitAll()

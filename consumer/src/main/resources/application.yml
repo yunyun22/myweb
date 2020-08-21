@@ -10,10 +10,22 @@ spring:
         server-addr: 118.25.67.106:8848
     alibaba:
       seata:
-        tx-service-group: SEATA_GROUP
+        tx-service-group: my_test_tx_group
   datasource:
     url: jdbc:mysql://118.25.67.106:3306/test
     username: root
     password: yuanyun520.
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+seata:
+  application-id: ${spring.application.name}
+  #需要和nacos中配置保持一致
+  tx-service-group: my_test_tx_group
+  config:
+    type: nacos
+    nacos:
+      #需要和server在同一个注册中心下
+      serverAddr: 118.25.67.106:8848
+      #需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+      group: SEATA_GROUP
